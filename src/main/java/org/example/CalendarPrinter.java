@@ -66,6 +66,9 @@ public class CalendarPrinter {
      * Определяет номер дня недели для первого дня года
      */
     private static int getFistDayOfWeekOfYear(int year) {
+        if (year < 1600) {
+            throw new IllegalArgumentException("Год должен быть больше или равен 1600");
+        }
         return (year + (year - 1) / 4 + 6) % 7;
     }
 
